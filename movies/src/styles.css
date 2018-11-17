@@ -1,0 +1,82 @@
+/* ------------ Reset CSS & Global Config ------------ */
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+/* -------------------- Import Fonts ------------------ */
+
+@font-face {
+    font-family: Abel;
+    src: url('../src/assets/fonts/Abel-Regular.ttf');
+}
+
+@font-face {
+    font-family: Lato;
+    src: url('../src/assets/fonts/Lato-Light.ttf');
+}
+
+
+/* ---------------------- Variables ------------------- */
+
+:root {
+    --primary-color: #116193;
+    --secondary-color: #00e8e4;
+    --tertiary-color: #ebebeb;
+    --primary-font: Abel;
+    --secondary-font: Lato;
+}
+
+
+/* ---------------------- Fonts Style ------------------- */
+
+h1,
+input {
+    font-family: var(--primary-font);
+    font-weight: 100;
+}
+
+
+/* ---------------------- Tags Style ------------------- */
+
+h1 {
+    color: var(--secondary-color);
+    background: var(--primary-color);
+    text-align: center;
+    padding: 1rem;
+    margin-bottom: 3rem;
+}
+
+input {
+    width: 100%;
+    background: #ebebeb;
+    border: none;
+    padding: 0.7rem;
+    border-radius: 10rem;
+    color: var(--primary-color);
+    padding-left: 1.5rem;
+    font-size: 0.9rem;
+}
+
+input::placeholder {
+    color: var(--primary-color);
+}
+
+input:focus {
+    outline: none;
+    border: 1px solid var(--primary-color);
+}
+
+
+/* --------------------- Grid Layout ------------------- */
+
+.container-grid {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    display: grid;
+    grid-template-rows: 100% 100%;
+}
