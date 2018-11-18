@@ -1,10 +1,43 @@
-<header>
-    <h1>Movies</h1>
-</header>
 <main class="container-grid">
     <section>
-        <input id="movie" name="movieInput" [(ngModel)]="movieInput" placeholder="Busque um filme por nome, ano ou gênero...">
+        <input [disabled]="loading" id="movie" name="movieInput" (keyup.enter)="searchMovies(movieInput, 1)" [(ngModel)]="movieInput" placeholder="Busque um filme por nome, ano ou gênero...">
     </section>
-    <section>
+    <section *ngFor="let movie of movies | paginate: { itemsPerPage: 5, currentPage: p }" class="container-grid--list">
+        <figure (click)="openMovie(movie.id)">
+            <img class="movie-image" [src]="movie.posterPath" [alt]="movie.title" [title]="movie.title">
+        </figure>
+        <div class="movie-info container-grid-movie--info">
+            <div (click)="openMovie(movie.id)" class="container-grid-movie--title">
+                <div class="circle-info">{{movie.popularity | percent:'2.0-0'}}</div>
+                <div class="title">
+                    <div class="title-flex">
+                        <span>{{movie.title}}</span>
+
+                    </div>
+                </div>
+            </div>
+            <div class="container-grid-movie--title date">
+                <div></div>
+                <div *ngIf="movie.releaseDate; else noDate" class="date">{{ movie?.releaseDate | date: 'dd/MM/y' }}</div>
+                <ng-template #noDate>--/--/--</ng-template>
+            </div>
+            <div class="movie-info--text">
+                <div class="content">
+                    {{movie.overview}}
+                </div>
+                <div class="tooltips">
+                    <span *ngFor="let genre of movie.movieGenre" (click)="genreService(genre.id, 1)" class="tooltip-item">{{genre.name}}</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section *ngIf="loading" class="not-found">
+        <img src="../../assets/img/loading.svg" alt="Loading">
+    </section>
+    <section *ngIf="pageSize == 0" class="not-found">
+        <h2>Filme não encontrado...</h2>
+    </section>
+    <section class="pagination">
+        <pagination-controls directionLinks="false" (pageChange)="p = $event" (click)="moveTop()"></pagination-controls>
     </section>
 </main>
