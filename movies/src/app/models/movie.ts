@@ -10,4 +10,10 @@ export class Movie{
     voteAverage: number;
     voteCount: number;
     movieGenre = [];
+    language: string;
+    budget: string;
+    revenue: string;
+    runtime: string;
+    status: number;
+    profet: string;
 }

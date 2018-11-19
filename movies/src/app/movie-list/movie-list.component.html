@@ -18,7 +18,7 @@
             </div>
             <div class="container-grid-movie--title date">
                 <div></div>
-                <div *ngIf="movie.releaseDate; else noDate" class="date">{{ movie?.releaseDate | date: 'dd/MM/y' }}</div>
+                <time *ngIf="movie.releaseDate; else noDate" class="date">{{ movie?.releaseDate | date: 'dd/MM/y' }}</time>
                 <ng-template #noDate>--/--/--</ng-template>
             </div>
             <div class="movie-info--text">

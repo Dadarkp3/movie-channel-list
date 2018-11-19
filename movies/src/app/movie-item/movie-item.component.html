@@ -1,14 +1,54 @@
-<div class="container-item-movie">
+<main class="container-item-movie">
     <section class="movie-item-title">
-        <h2 class="item-title">Movie Titlfdghdsfhsgdfhdfhfdhsghsdghfhsdhsdhsdhe</h2>
-        <span class="item-date">22/12/1998</span>
+        <h2 class="item-title">{{movie.title}}</h2>
+        <time *ngIf="movie.releaseDate; else noDate" class="item-date">{{ movie?.releaseDate | date: 'dd/MM/y' }}</time>
+        <ng-template #noDate>--/--/--</ng-template>
     </section>
     <section class="movie-item-content">
         <div class="conteudo">
-            oi
+            <h3 class="subtitle">Sinopse</h3>
+            <article class="content-info">{{movie.overview}}</article>
+            <h3 class="subtitle">Informações</h3>
+            <div class="information-content">
+                <div class="information-content-item">
+                    <div class="title-content">Situação</div>
+                    <div class="content">{{movie.status}}</div>
+                </div>
+                <div class="information-content-item">
+                    <div class="title-content">Idioma</div>
+                    <div class="content">{{movie.language}}</div>
+                </div>
+                <div class="information-content-item">
+                    <div class="title-content">Duração</div>
+                    <div class="content">{{movie.runtime}}</div>
+                </div>
+                <div class="information-content-item">
+                    <div class="title-content">Orçamento</div>
+                    <div class="content">{{movie.budget}}</div>
+                </div>
+                <div class="information-content-item">
+                    <div class="title-content">Receita
+                    </div>
+                    <div class="content">{{movie.revenue}}</div>
+                </div>
+                <div class="information-content-item">
+                    <div class="title-content">Lucro</div>
+                    <div class="content">{{movie.profet}}</div>
+                </div>
+            </div>
+            <div class="extra-info">
+                <div class="tooltips">
+                    <span *ngFor="let genre of movie.movieGenre" class="tooltip-item">{{genre.name}}</span>
+                </div>
+                <div class="percentual-circle">
+                    <div class="circle">
+                        {{movie.popularity | percent:'2.0-0'}}
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="image">
-            <img src="../../assets/img/foto-teste.jpg" alt="">
+            <img [src]="movie.posterPath" [alt]="movie.title" [title]="movie.title">
         </div>
     </section>
-</div>
+</main>
