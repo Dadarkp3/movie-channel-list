@@ -1,13 +1,13 @@
-<main class="container-grid">
+<main class="display-grid container-grid">
     <section>
         <input [disabled]="loading" id="movie" name="movieInput" (keyup.enter)="searchMovies(movieInput, 1)" [(ngModel)]="movieInput" placeholder="Busque um filme por nome, ano ou gênero...">
     </section>
-    <section *ngFor="let movie of movies | paginate: { itemsPerPage: 5, currentPage: p }" class="container-grid--list">
+    <section *ngFor="let movie of movies | paginate: { itemsPerPage: 5, currentPage: p }" class="display-grid container-grid--list">
         <figure (click)="openMovie(movie.id)">
             <img class="movie-image" [src]="movie.posterPath" [alt]="movie.title" [title]="movie.title">
         </figure>
-        <div class="movie-info container-grid-movie--info">
-            <div (click)="openMovie(movie.id)" class="container-grid-movie--title">
+        <div class="movie-info display-grid container-grid-movie--info">
+            <div (click)="openMovie(movie.id)" class="display-grid container-grid-movie--title">
                 <div class="circle-info">{{movie.popularity | percent:'2.0-0'}}</div>
                 <div class="title">
                     <div class="display-flex title-flex">
@@ -16,7 +16,7 @@
                     </div>
                 </div>
             </div>
-            <div class="container-grid-movie--title date">
+            <div class="display-grid container-grid-movie--title date">
                 <div></div>
                 <time *ngIf="movie.releaseDate; else noDate" class="date">{{ movie?.releaseDate | date: 'dd/MM/y' }}</time>
                 <ng-template #noDate>--/--/--</ng-template>
