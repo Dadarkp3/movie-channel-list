@@ -26,7 +26,7 @@
                     {{movie.overview}}
                 </div>
                 <div class="tooltips">
-                    <span *ngFor="let genre of movie.movieGenre" (click)="genreService(genre.id, 1)" class="tooltip-item">{{genre.name}}</span>
+                    <span *ngFor="let genre of movie.movieGenre" (click)="genreService(genre.id, 1) && moveTop()" class="tooltip-item">{{genre.name}}</span>
                 </div>
             </div>
         </div>

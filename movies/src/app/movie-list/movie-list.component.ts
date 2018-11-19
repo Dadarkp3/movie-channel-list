@@ -95,6 +95,7 @@ export class MovieListComponent implements OnInit {
       this.pageSize = this.movies.length;
       this.movieInput = '';
       this.loading = false;
+      this.moveTop();
   }
 
   checkGenre(num, movie: Movie){
