@@ -5,6 +5,14 @@
         margin: 0;
         box-sizing: border-box;
     }
+    /* --------------------- Media Query ------------------- */
+    
+    @media (max-width: 600px) {
+        .container-grid--list {
+            grid-template-columns: none;
+            grid-template-rows: repeat(1fr);
+        }
+    }
     /* -------------------- Import Fonts ------------------ */
     
     @font-face {
@@ -137,7 +145,6 @@
     
     .pagination,
     .not-found {
-        display: flex;
         flex-wrap: wrap;
         justify-content: center;
         margin-bottom: 2rem;
@@ -186,7 +193,6 @@
     }
     
     .extra-info {
-        display: flex;
         flex-wrap: wrap;
         align-items: flex-start;
     }
@@ -206,6 +212,10 @@
     }
     /* --------------------- Grid Layout ------------------- */
     
+    .display-flex {
+        display: flex;
+    }
+    
     .container-grid {
         width: 80%;
         margin-left: auto;
@@ -219,13 +229,6 @@
         width: 100%;
         display: grid;
         grid-template-columns: 0.8fr 4fr;
-    }
-    
-    @media (max-width: 600px) {
-        .container-grid--list {
-            grid-template-columns: none;
-            grid-template-rows: repeat(1fr);
-        }
     }
     
     .container-grid-movie--info {
@@ -243,7 +246,6 @@
     
     .title-flex {
         height: 51%;
-        display: flex;
     }
     
     .title-flex p {
@@ -263,7 +265,6 @@
     .tooltips {
         max-width: 80%;
         margin: 1rem -0.5rem;
-        display: flex;
         flex-direction: row;
         flex-wrap: wrap;
     }
@@ -293,7 +294,6 @@
     }
     
     .movie-item-title {
-        display: flex;
         flex-direction: row;
         flex-wrap: wrap;
         color: var(--primary-color);
@@ -314,7 +314,6 @@
     }
     
     .movie-item-content {
-        display: flex;
         flex-wrap: wrap-reverse;
         background: var(--senary-color);
         align-items: stretch;
@@ -351,7 +350,6 @@
     }
     
     .information-content {
-        display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
         margin-top: 1rem;
@@ -373,6 +371,5 @@
     
     .extra-info .percentual-circle {
         width: 20%;
-        display: flex;
         justify-content: center;
     }

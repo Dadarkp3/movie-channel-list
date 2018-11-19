@@ -10,7 +10,7 @@
             <div (click)="openMovie(movie.id)" class="container-grid-movie--title">
                 <div class="circle-info">{{movie.popularity | percent:'2.0-0'}}</div>
                 <div class="title">
-                    <div class="title-flex">
+                    <div class="display-flex title-flex">
                         <p>{{movie.title}}</p>
 
                     </div>
@@ -25,19 +25,19 @@
                 <div class="content">
                     {{movie.overview}}
                 </div>
-                <div class="tooltips">
+                <div class="display-flex tooltips">
                     <span *ngFor="let genre of movie.movieGenre" (click)="genreService(genre.id, 1) && moveTop()" class="tooltip-item">{{genre.name}}</span>
                 </div>
             </div>
         </div>
     </section>
-    <section *ngIf="loading" class="not-found">
+    <section *ngIf="loading" class="display-flex not-found">
         <img src="../../assets/img/loading.svg" alt="Loading">
     </section>
-    <section *ngIf="pageSize == 0" class="not-found">
+    <section *ngIf="pageSize == 0" class="display-flex not-found">
         <h2>Filme não encontrado...</h2>
     </section>
-    <section class="pagination">
+    <section class="display-flex pagination">
         <pagination-controls directionLinks="false" (pageChange)="p = $event" (click)="moveTop()"></pagination-controls>
     </section>
 </main>
