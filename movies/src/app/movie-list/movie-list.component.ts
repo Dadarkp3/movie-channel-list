@@ -3,7 +3,7 @@ import { MovieService } from '../service/movie.service';
 import { Movie } from '../models/movie';
 import { DOCUMENT } from '@angular/platform-browser';
 import { Inject} from "@angular/core";
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-movie-list',
@@ -20,12 +20,18 @@ export class MovieListComponent implements OnInit {
   public genreId: string;
   public total;
   public loading: boolean = false;
+  public id: number;
+  private sub: any;
   
 
-  constructor(private service: MovieService, @Inject(DOCUMENT) private document: Document, private router: Router) { }
+  constructor(private route: ActivatedRoute, private service: MovieService, @Inject(DOCUMENT) private document: Document, private router: Router) { }
 
   ngOnInit() {
     this.searchGenre();
+    this.sub = this.route.params.subscribe(params => this.id = params['id']);
+    if(this.id){
+      this.genreService(this.id,1);
+    }
   }
 
   searchMovies(searchInput, currentPage){

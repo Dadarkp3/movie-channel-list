@@ -5,6 +5,7 @@ import { MovieItemComponent } from './movie-item/movie-item.component';
 
 const routes: Routes = [
   { path: 'home', component: MovieListComponent },
+  { path: 'home/genre/:id', component: MovieListComponent },
   { path: '',
   redirectTo: '/home',
   pathMatch: 'full'

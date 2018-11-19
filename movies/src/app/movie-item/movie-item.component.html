@@ -1,4 +1,4 @@
-<main class="container-item-movie">
+<main *ngIf="!loading" class="container-item-movie">
     <section class="movie-item-title">
         <h2 class="item-title">{{movie.title}}</h2>
         <time *ngIf="movie.releaseDate; else noDate" class="item-date">{{ movie?.releaseDate | date: 'dd/MM/y' }}</time>
@@ -38,17 +38,20 @@
             </div>
             <div class="extra-info">
                 <div class="tooltips">
-                    <span *ngFor="let genre of movie.movieGenre" class="tooltip-item">{{genre.name}}</span>
+                    <span *ngFor="let genre of movie.movieGenre" (click)="searchGenre(genre.id)" class=" tooltip-item ">{{genre.name}}</span>
                 </div>
-                <div class="percentual-circle">
-                    <div class="circle">
+                <div class="percentual-circle ">
+                    <div class="circle ">
                         {{movie.popularity | percent:'2.0-0'}}
                     </div>
                 </div>
             </div>
         </div>
-        <div class="image">
-            <img [src]="movie.posterPath" [alt]="movie.title" [title]="movie.title">
+        <div class="image ">
+            <img [src]="movie.posterPath " [alt]="movie.title " [title]="movie.title ">
         </div>
     </section>
 </main>
+<section *ngIf="loading" class="not-found">
+    <img src="../../assets/img/loading.svg" alt="Loading">
+</section>

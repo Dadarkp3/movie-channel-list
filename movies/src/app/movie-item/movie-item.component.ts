@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Movie } from '../models/movie';
 import { MovieService } from '../service/movie.service';
 
@@ -13,14 +13,16 @@ export class MovieItemComponent implements OnInit {
   public id: number;
   private sub: any;
   public movie: Movie = new Movie();
+  public loading: boolean = false;
 
-  constructor(private route: ActivatedRoute, private service: MovieService) { }
+  constructor(private route: ActivatedRoute, private service: MovieService, private router: Router) { }
 
   ngOnInit() {
     this.sub = this.route.params.subscribe(params => this.id = params['id']);
     this.searchMovieInfo();
   }
   searchMovieInfo() {
+    this.loading = true;
     this.movie = new Movie();
     this.service.findMovieById(this.id).subscribe(response => {
       console.log(response);
@@ -47,6 +49,7 @@ export class MovieItemComponent implements OnInit {
       }
       this.movie.popularity = response.vote_average/10;
       this.movie.movieGenre = response.genres;
+      this.loading = false;
     });
   }
 
@@ -64,5 +67,7 @@ export class MovieItemComponent implements OnInit {
         }
     }
 
-
+    searchGenre(id: number){
+      this.router.navigate(['/home/genre/', id]);
+    }
 }
