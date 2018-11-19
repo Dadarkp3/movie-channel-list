@@ -30,8 +30,12 @@ export class MovieItemComponent implements OnInit {
       this.movie.title = response.title;
       this.movie.budget = this.convertingDolars(response.budget);
       this.movie.revenue = this.convertingDolars(response.revenue);
-      this.movie.profet = this.convertingDolars(response.revenue - response.budget);
-      this.movie.language = response.spoken_languages[0].name;
+      if(response.budget && response.revenue){
+        this.movie.profet = this.convertingDolars(response.revenue - response.budget);
+      }
+      if(response.spoken_languages && response.spoken_languages[0]){
+        this.movie.language = response.spoken_languages[0].name;
+      }
       this.movie.originalTitle = response.original_title;
       this.movie.overview = response.overview;
       this.movie.status = response.status;

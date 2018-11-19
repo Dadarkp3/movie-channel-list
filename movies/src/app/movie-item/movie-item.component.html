@@ -7,33 +7,33 @@
     <section class="movie-item-content">
         <div class="conteudo">
             <h3 class="subtitle">Sinopse</h3>
-            <article class="content-info">{{movie.overview}}</article>
+            <article class="content-info">{{movie.overview || 'Não informado'}}</article>
             <h3 class="subtitle">Informações</h3>
             <div class="information-content">
                 <div class="information-content-item">
                     <div class="title-content">Situação</div>
-                    <div class="content">{{movie.status}}</div>
+                    <div class="content">{{movie.status || 'Não informado'}}</div>
                 </div>
                 <div class="information-content-item">
                     <div class="title-content">Idioma</div>
-                    <div class="content">{{movie.language}}</div>
+                    <div class="content">{{movie.language || 'Não informado'}}</div>
                 </div>
                 <div class="information-content-item">
                     <div class="title-content">Duração</div>
-                    <div class="content">{{movie.runtime}}</div>
+                    <div class="content">{{movie.runtime || 'Não informado'}}</div>
                 </div>
                 <div class="information-content-item">
                     <div class="title-content">Orçamento</div>
-                    <div class="content">{{movie.budget}}</div>
+                    <div class="content">{{movie.budget || 'Não informado'}}</div>
                 </div>
                 <div class="information-content-item">
                     <div class="title-content">Receita
                     </div>
-                    <div class="content">{{movie.revenue}}</div>
+                    <div class="content">{{movie.revenue || 'Não informado'}}</div>
                 </div>
                 <div class="information-content-item">
                     <div class="title-content">Lucro</div>
-                    <div class="content">{{movie.profet}}</div>
+                    <div class="content">{{movie.profet || 'Não informado'}}</div>
                 </div>
             </div>
             <div class="extra-info">
