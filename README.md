@@ -13,10 +13,13 @@ Movie Channel List - UI para Api TMDB criada em Angular.
     ```
     cd /movies
     npm install
+    
     ```
 
 2. Run the application
 
     ```
     npm start
+    Navigate to http://localhost:4200/
+    
     ```
