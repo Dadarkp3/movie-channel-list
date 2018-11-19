@@ -33,5 +33,9 @@ export class MovieService {
     return this.http.get<any>('https://api.themoviedb.org/3/movie/'+ id +'?api_key='+ this.apiKey +'&language=pt-BR');
   }
 
+  findTrailerbyMovieId(id: number){
+    return this.http.get<any>('https://api.themoviedb.org/3/movie/'+ id +'/videos?api_key='+ this.apiKey +'&language=pt-BR');
+  }
+
 
 }

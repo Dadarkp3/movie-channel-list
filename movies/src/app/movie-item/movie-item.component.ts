@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Movie } from '../models/movie';
 import { MovieService } from '../service/movie.service';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-movie-item',
@@ -15,7 +16,7 @@ export class MovieItemComponent implements OnInit {
   public movie: Movie = new Movie();
   public loading: boolean = false;
 
-  constructor(private route: ActivatedRoute, private service: MovieService, private router: Router) { }
+  constructor(private route: ActivatedRoute, public domSanitizer: DomSanitizer, private service: MovieService, private router: Router) { }
 
   ngOnInit() {
     this.sub = this.route.params.subscribe(params => this.id = params['id']);
@@ -25,7 +26,6 @@ export class MovieItemComponent implements OnInit {
     this.loading = true;
     this.movie = new Movie();
     this.service.findMovieById(this.id).subscribe(response => {
-      console.log(response);
       this.movie.id = response.id;
       this.movie.title = response.title;
       this.movie.budget = this.convertingDolars(response.budget);
@@ -53,8 +53,16 @@ export class MovieItemComponent implements OnInit {
       }
       this.movie.popularity = response.vote_average/10;
       this.movie.movieGenre = response.genres;
+        this.getVideo(this.movie.id);
       this.loading = false;
     });
+  }
+
+  getVideo(id){
+    this.service.findTrailerbyMovieId(id).subscribe(response => {
+      if(response.results && response.results[0])
+      this.movie.trailer = 'https://www.youtube.com/embed/' + response.results[0].key;
+    } );
   }
 
   convertingTime(x){

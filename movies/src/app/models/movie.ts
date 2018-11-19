@@ -16,4 +16,5 @@ export class Movie{
     runtime: string;
     status: number;
     profet: string;
+    trailer: any;
 }

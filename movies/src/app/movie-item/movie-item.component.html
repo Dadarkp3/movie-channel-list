@@ -51,6 +51,9 @@
             <img [src]="movie.posterPath " [alt]="movie.title " [title]="movie.title ">
         </div>
     </section>
+    <section *ngIf="movie.trailer" class="video">
+        <iframe class="video-frame" [src]="domSanitizer.bypassSecurityTrustResourceUrl(movie?.trailer)" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </section>
 </main>
 <section *ngIf="loading" class="display-flex not-found">
     <img src="../../assets/img/loading.svg" alt="Loading">
