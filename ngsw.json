@@ -1,0 +1,93 @@
+{
+  "configVersion": 1,
+  "index": "https://dadarkp3.github.io/movie-channel-list/index.html",
+  "assetGroups": [
+    {
+      "name": "app",
+      "installMode": "prefetch",
+      "updateMode": "prefetch",
+      "urls": [
+        "https://dadarkp3.github.io/movie-channel-list/favicon.ico",
+        "https://dadarkp3.github.io/movie-channel-list/index.html",
+        "https://dadarkp3.github.io/movie-channel-list/main.f7a5069a3c7093689490.js",
+        "https://dadarkp3.github.io/movie-channel-list/polyfills.c6871e56cb80756a5498.js",
+        "https://dadarkp3.github.io/movie-channel-list/runtime.ec2944dd8b20ec099bf3.js",
+        "https://dadarkp3.github.io/movie-channel-list/styles.31d351712913f06ff850.css"
+      ],
+      "patterns": []
+    },
+    {
+      "name": "assets",
+      "installMode": "lazy",
+      "updateMode": "prefetch",
+      "urls": [
+        "https://dadarkp3.github.io/movie-channel-list/assets/fonts/Abel-Regular.ttf",
+        "https://dadarkp3.github.io/movie-channel-list/assets/fonts/Lato-Light.ttf",
+        "https://dadarkp3.github.io/movie-channel-list/assets/fonts/Lato-Regular.ttf",
+        "https://dadarkp3.github.io/movie-channel-list/assets/icons/icon-128x128.png",
+        "https://dadarkp3.github.io/movie-channel-list/assets/icons/icon-144x144.png",
+        "https://dadarkp3.github.io/movie-channel-list/assets/icons/icon-152x152.png",
+        "https://dadarkp3.github.io/movie-channel-list/assets/icons/icon-192x192.png",
+        "https://dadarkp3.github.io/movie-channel-list/assets/icons/icon-384x384.png",
+        "https://dadarkp3.github.io/movie-channel-list/assets/icons/icon-512x512.png",
+        "https://dadarkp3.github.io/movie-channel-list/assets/icons/icon-72x72.png",
+        "https://dadarkp3.github.io/movie-channel-list/assets/icons/icon-96x96.png",
+        "https://dadarkp3.github.io/movie-channel-list/assets/img/film1.png",
+        "https://dadarkp3.github.io/movie-channel-list/assets/img/foto-teste.jpg",
+        "https://dadarkp3.github.io/movie-channel-list/assets/img/git.sede.solutis.net.br.html",
+        "https://dadarkp3.github.io/movie-channel-list/assets/img/loading.svg",
+        "https://dadarkp3.github.io/movie-channel-list/assets/img/no-image.png",
+        "https://dadarkp3.github.io/movie-channel-list/assets/img/not_found.png",
+        "https://dadarkp3.github.io/movie-channel-list/assets/readme/tela_captura.PNG",
+        "https://dadarkp3.github.io/movie-channel-list/assets/readme/tela_captura_2.PNG"
+      ],
+      "patterns": []
+    }
+  ],
+  "dataGroups": [],
+  "hashTable": {
+    "https://dadarkp3.github.io/movie-channel-list/assets/fonts/Abel-Regular.ttf": "3ccc61028c66b2866400315e38301ce5df27e06a",
+    "https://dadarkp3.github.io/movie-channel-list/assets/fonts/Lato-Light.ttf": "6eb95108fef81bd8cfbf7e20d4ca0634e5989019",
+    "https://dadarkp3.github.io/movie-channel-list/assets/fonts/Lato-Regular.ttf": "127f241871a9fe42cd8d073a0835410f3824d57c",
+    "https://dadarkp3.github.io/movie-channel-list/assets/icons/icon-128x128.png": "dae3b6ed49bdaf4327b92531d4b5b4a5d30c7532",
+    "https://dadarkp3.github.io/movie-channel-list/assets/icons/icon-144x144.png": "b0bd89982e08f9bd2b642928f5391915b74799a7",
+    "https://dadarkp3.github.io/movie-channel-list/assets/icons/icon-152x152.png": "7479a9477815dfd9668d60f8b3b2fba709b91310",
+    "https://dadarkp3.github.io/movie-channel-list/assets/icons/icon-192x192.png": "1abd80d431a237a853ce38147d8c63752f10933b",
+    "https://dadarkp3.github.io/movie-channel-list/assets/icons/icon-384x384.png": "329749cd6393768d3131ed6304c136b1ca05f2fd",
+    "https://dadarkp3.github.io/movie-channel-list/assets/icons/icon-512x512.png": "559d9c4318b45a1f2b10596bbb4c960fe521dbcc",
+    "https://dadarkp3.github.io/movie-channel-list/assets/icons/icon-72x72.png": "c457e56089a36952cd67156f9996bc4ce54a5ed9",
+    "https://dadarkp3.github.io/movie-channel-list/assets/icons/icon-96x96.png": "3914125a4b445bf111c5627875fc190f560daa41",
+    "https://dadarkp3.github.io/movie-channel-list/assets/img/film1.png": "e8c30d423159f8d1f4ff4aaf85cb2d9ac0ba769e",
+    "https://dadarkp3.github.io/movie-channel-list/assets/img/foto-teste.jpg": "36ce35013f5546d13a85af483c5c6837ea5cafd8",
+    "https://dadarkp3.github.io/movie-channel-list/assets/img/git.sede.solutis.net.br.html": "6c9cb302d1be0c04931996c0c85ce6ee2c196e16",
+    "https://dadarkp3.github.io/movie-channel-list/assets/img/loading.svg": "7e5c52aa1af28de0059bc731a986fdebaf02de7a",
+    "https://dadarkp3.github.io/movie-channel-list/assets/img/no-image.png": "2740eafc438e28326697696ade0c04cb310a4040",
+    "https://dadarkp3.github.io/movie-channel-list/assets/img/not_found.png": "905a3bfab07af4e93d6c4321ad4523cbb55b1d78",
+    "https://dadarkp3.github.io/movie-channel-list/assets/readme/tela_captura.PNG": "f1364d39484d085dca8a4469105b4dea9365927d",
+    "https://dadarkp3.github.io/movie-channel-list/assets/readme/tela_captura_2.PNG": "85b18b194f7989fdf9e7aa8d45c483f13bb46855",
+    "https://dadarkp3.github.io/movie-channel-list/favicon.ico": "16d8b1f844baaf3f12933da4ce3a3bab424db617",
+    "https://dadarkp3.github.io/movie-channel-list/index.html": "e32eb91d4a2a40bdca16dc34eec3fee6d96995aa",
+    "https://dadarkp3.github.io/movie-channel-list/main.f7a5069a3c7093689490.js": "ec4ba952f536a781c7c77c86424abd1cb524e676",
+    "https://dadarkp3.github.io/movie-channel-list/polyfills.c6871e56cb80756a5498.js": "ce68d153e9b9b6d26b625069c0ee99ae09c6f255",
+    "https://dadarkp3.github.io/movie-channel-list/runtime.ec2944dd8b20ec099bf3.js": "b62956c2192bfe5516d6374e753773901ed50ec5",
+    "https://dadarkp3.github.io/movie-channel-list/styles.31d351712913f06ff850.css": "634664752865860e2fc5a0c3d772ab003ba865e4"
+  },
+  "navigationUrls": [
+    {
+      "positive": true,
+      "regex": "^\\/.*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*\\.[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*\\/.*$"
+    }
+  ]
+}
