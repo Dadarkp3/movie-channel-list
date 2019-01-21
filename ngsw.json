@@ -9,7 +9,7 @@
       "urls": [
         "https://dadarkp3.github.io/movie-channel-list/favicon.ico",
         "https://dadarkp3.github.io/movie-channel-list/index.html",
-        "https://dadarkp3.github.io/movie-channel-list/main.8119a1795f244b56ba80.js",
+        "https://dadarkp3.github.io/movie-channel-list/main.7c8d027d156c1e44093b.js",
         "https://dadarkp3.github.io/movie-channel-list/polyfills.c6871e56cb80756a5498.js",
         "https://dadarkp3.github.io/movie-channel-list/runtime.ec2944dd8b20ec099bf3.js",
         "https://dadarkp3.github.io/movie-channel-list/styles.31d351712913f06ff850.css"
@@ -52,7 +52,8 @@
         "https:\\/\\/api\\.themoviedb\\.org\\/3\\/search\\/.*",
         "https:\\/\\/api\\.themoviedb\\.org\\/3\\/genre\\/.*",
         "https:\\/\\/api\\.themoviedb\\.org\\/3\\/discover",
-        "\\/home"
+        "\\/home",
+        "https:\\/\\/api\\.themoviedb\\.org\\/3\\/discover\\/movie\\?api_key=a06e9d5914aec7bf90de97e78a8b482&sort_by=popularity\\.desc&include_adult=false&include_video=false&page=1"
       ],
       "strategy": "freshness",
       "maxSize": 15,
@@ -82,8 +83,8 @@
     "https://dadarkp3.github.io/movie-channel-list/assets/readme/tela_captura.PNG": "f1364d39484d085dca8a4469105b4dea9365927d",
     "https://dadarkp3.github.io/movie-channel-list/assets/readme/tela_captura_2.PNG": "85b18b194f7989fdf9e7aa8d45c483f13bb46855",
     "https://dadarkp3.github.io/movie-channel-list/favicon.ico": "16d8b1f844baaf3f12933da4ce3a3bab424db617",
-    "https://dadarkp3.github.io/movie-channel-list/index.html": "b7a7ca9c827f06ed38c2f8a55a93948268f20e62",
-    "https://dadarkp3.github.io/movie-channel-list/main.8119a1795f244b56ba80.js": "02e885fd293c0062d142e5334b2cdc3e671d4129",
+    "https://dadarkp3.github.io/movie-channel-list/index.html": "8a5e23916476c28f212a55c324f5da7140cad16f",
+    "https://dadarkp3.github.io/movie-channel-list/main.7c8d027d156c1e44093b.js": "38ec7676f57d61bb618200679dea0dd327fabac5",
     "https://dadarkp3.github.io/movie-channel-list/polyfills.c6871e56cb80756a5498.js": "ce68d153e9b9b6d26b625069c0ee99ae09c6f255",
     "https://dadarkp3.github.io/movie-channel-list/runtime.ec2944dd8b20ec099bf3.js": "b62956c2192bfe5516d6374e753773901ed50ec5",
     "https://dadarkp3.github.io/movie-channel-list/styles.31d351712913f06ff850.css": "634664752865860e2fc5a0c3d772ab003ba865e4"
