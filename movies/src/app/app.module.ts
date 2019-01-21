@@ -11,6 +11,7 @@ import { MovieItemComponent } from './movie-item/movie-item.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { MovieComponent } from './movie/movie.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { MovieComponent } from './movie/movie.component';
     MovieListComponent,
     MovieItemComponent,
     MovieComponent,
+    PageNotFoundComponent,
   ],
   imports: [
     BrowserModule,
