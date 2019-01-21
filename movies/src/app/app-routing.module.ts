@@ -7,13 +7,10 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 const routes: Routes = [
   { path: 'home', component: MovieListComponent },
   { path: 'home/genre/:id', component: MovieListComponent },
-  { path: '',
-  redirectTo: '/home',
-  pathMatch: 'full'
-},
-{path: 'movie/:id', component: MovieItemComponent},
-{ path: '404', component: PageNotFoundComponent },
-{ path: '**', component: PageNotFoundComponent }
+  { path: '', component: MovieListComponent },
+  {path: 'movie/:id', component: MovieItemComponent},
+  { path: '404', component: PageNotFoundComponent },
+  { path: '**', component: PageNotFoundComponent }
 ];
 
 @NgModule({
