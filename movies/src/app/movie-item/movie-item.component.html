@@ -24,16 +24,16 @@
                 </div>
                 <div class="information-content-item">
                     <div class="title-content">Orçamento</div>
-                    <div class="content">{{movie.budget || 'Não informado'}}</div>
+                    <div class="content">{{(movie.budget | currency) || 'Não informado'}}</div>
                 </div>
                 <div class="information-content-item">
                     <div class="title-content">Receita
                     </div>
-                    <div class="content">{{movie.revenue || 'Não informado'}}</div>
+                    <div class="content">{{ (movie.revenue | currency) || 'Não informado'}}</div>
                 </div>
                 <div class="information-content-item">
                     <div class="title-content">Lucro</div>
-                    <div class="content">{{movie.profet || 'Não informado'}}</div>
+                    <div class="content">{{ (movie.profet | currency) || 'Não informado'}}</div>
                 </div>
             </div>
             <div class="display-flex extra-info">
@@ -52,7 +52,7 @@
         </div>
     </section>
     <section *ngIf="movie.trailer" class="video">
-        <iframe width="560" height="349" class="video-frame" [src]="domSanitizer.bypassSecurityTrustResourceUrl(movie?.trailer)" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe title="YouTube Trailer" width="560" height="349" class="video-frame" [src]="domSanitizer.bypassSecurityTrustResourceUrl(movie?.trailer)" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </section>
 </main>
 <section *ngIf="loading" class="display-flex not-found">

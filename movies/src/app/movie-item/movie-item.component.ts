@@ -28,10 +28,10 @@ export class MovieItemComponent implements OnInit {
     this.service.findMovieById(this.id).subscribe(response => {
       this.movie.id = response.id;
       this.movie.title = response.title;
-      this.movie.budget = this.convertingDolars(response.budget);
-      this.movie.revenue = this.convertingDolars(response.revenue);
-      if(response.budget && response.revenue){
-        this.movie.profet = this.convertingDolars(response.revenue - response.budget);
+      this.movie.budget = response.budget;
+      this.movie.revenue = response.revenue;
+      if(response.budget && response.revenue) {
+        this.movie.profet = (response.revenue - response.budget).toString();
       }
       if(response.spoken_languages && response.spoken_languages[0]){
         this.movie.language = response.spoken_languages[0].name;
@@ -71,13 +71,6 @@ export class MovieItemComponent implements OnInit {
     let h = (MINUTES-m)/60;
     return Math.round(h).toString() + ":" + (Math.round(m)<10?"0":"") + Math.round(m).toString()+ ':00';
   }
-
-  convertingDolars(x)
-    {
-        if(x){
-            return '$'+ x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".") + ',00';    
-        }
-    }
 
     searchGenre(id: number){
       this.router.navigate(['/home/genre/', id]);
