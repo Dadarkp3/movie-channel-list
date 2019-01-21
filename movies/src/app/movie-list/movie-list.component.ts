@@ -30,16 +30,24 @@ export class MovieListComponent implements OnInit {
 
   ngOnInit() {
     this.searchGenre();
+    this.searchMostPopular();
     this.sub = this.route.params.subscribe(params => this.id = params['id']);
     if(this.id){
       this.genreService(this.id,1);
     }
   }
 
+  searchMostPopular(){
+    this.loading = true;
+    this.service.mostPopularMovies().subscribe(response => {
+      this.prepareData(response);
+    });
+  }
+
   searchMovies(searchInput, currentPage){
     this.loading = true;
     if(this.checkYearService(searchInput)){
-      this.service.searchMovieByYear(searchInput, currentPage).pipe(debounceTime(10)).subscribe(response => {
+      this.service.searchMovieByYear(searchInput, currentPage).subscribe(response => {
         this.prepareData(response);
       });
     }else if(this.checkGenreService()){

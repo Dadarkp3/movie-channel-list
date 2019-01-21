@@ -52,7 +52,7 @@
         </div>
     </section>
     <section *ngIf="movie.trailer" class="video">
-        <iframe class="video-frame" [src]="domSanitizer.bypassSecurityTrustResourceUrl(movie?.trailer)" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe width="560" height="349" class="video-frame" [src]="domSanitizer.bypassSecurityTrustResourceUrl(movie?.trailer)" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </section>
 </main>
 <section *ngIf="loading" class="display-flex not-found">
