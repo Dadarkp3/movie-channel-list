@@ -6,7 +6,7 @@
         <app-movie [movie]="movie" (openMovie)="openMovieid($event)" (selectGenre)="searchsendGenre($event)"></app-movie>
     </div>
     <section *ngIf="loading" class="display-flex not-found">
-        <img src="../../assets/img/loading.svg" alt="Loading">
+        <img src="./assets/img/loading.svg" alt="Loading">
     </section>
     <section *ngIf="pageSize == 0" class="display-flex not-found">
         <h2>Filme não encontrado...</h2>

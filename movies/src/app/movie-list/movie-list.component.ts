@@ -110,7 +110,7 @@ export class MovieListComponent implements OnInit {
           movie.posterPath = "https://image.tmdb.org/t/p/w185" + element.poster_path;
         }else
         {
-          movie.posterPath = '../../assets/img/no-image.png'
+          movie.posterPath = './assets/img/no-image.png'
         }
         movie.popularity = element.vote_average/10;
         movie.overview = element.overview;

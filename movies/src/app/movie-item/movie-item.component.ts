@@ -49,7 +49,7 @@ export class MovieItemComponent implements OnInit {
         this.movie.posterPath = "https://image.tmdb.org/t/p/w185" + response.poster_path;
       }else
       {
-        this.movie.posterPath = '../../assets/img/no-image.png'
+        this.movie.posterPath = './assets/img/no-image.png'
       }
       this.movie.popularity = response.vote_average/10;
       this.movie.movieGenre = response.genres;
