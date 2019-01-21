@@ -26,6 +26,7 @@ export class MovieListComponent implements OnInit {
   public loading: boolean = false;
   public id: number;
   private sub: any;
+  public p: number;
 
   constructor(private route: ActivatedRoute, private service: MovieService, @Inject(DOCUMENT) private document: Document, private router: Router) { }
 
@@ -106,7 +107,7 @@ export class MovieListComponent implements OnInit {
           movie.releaseDate = new Date(element.release_date);
         }
         if(element.poster_path !== null){
-          movie.posterPath = "http://image.tmdb.org/t/p/w185" + element.poster_path;
+          movie.posterPath = "https://image.tmdb.org/t/p/w185" + element.poster_path;
         }else
         {
           movie.posterPath = '../../assets/img/no-image.png'

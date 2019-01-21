@@ -13,21 +13,20 @@ export class MovieComponent implements OnInit {
   public movie: Movie;
 
   @Output()
-  selectGenre: EventEmitter<number> = new EventEmitter<number>();
+  selectGenre: EventEmitter<string> = new EventEmitter<string>();
 
   @Output()
-  openMovie: EventEmitter<number> = new EventEmitter<number>();
-
+  openMovie: EventEmitter<string> = new EventEmitter<string>();
   constructor() { }
 
   ngOnInit() {
   }
 
-  sendGenre(id: number){
+  sendGenre(id: string){
     this.selectGenre.emit(id);
   }
 
-  openMovieid(id: number){
+  openMovieid(id: string){
     this.openMovie.emit(id);
   }
   

@@ -9,7 +9,7 @@ import { Movie } from '../models/movie';
 export class MovieService {
 
   private movieUrl = 'https://api.themoviedb.org/3/movie/';
-	private movieUrlSearch = 'http://api.themoviedb.org/3/search/movie?api_key=ba06e9d5914aec7bf90de97e78a8b482&query=';
+	private movieUrlSearch = 'https://api.themoviedb.org/3/search/movie?api_key=ba06e9d5914aec7bf90de97e78a8b482&query=';
 	private apiKey = 'ba06e9d5914aec7bf90de97e78a8b482';
 
   constructor(private http: HttpClient) { }

@@ -46,7 +46,7 @@ export class MovieItemComponent implements OnInit {
         this.movie.releaseDate = new Date(response.release_date);
       }
       if(response.poster_path !== null){
-        this.movie.posterPath = "http://image.tmdb.org/t/p/w185" + response.poster_path;
+        this.movie.posterPath = "https://image.tmdb.org/t/p/w185" + response.poster_path;
       }else
       {
         this.movie.posterPath = '../../assets/img/no-image.png'
