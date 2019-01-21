@@ -48,6 +48,11 @@ export class MovieListComponent implements OnInit {
       });
     }
   }
+  
+  searchsendGenre(event){
+    this.genreService(event, 1);
+  }
+
 
   genreService(genreId, page){
     this.service.searchMovieByGenre(genreId, page).subscribe(response => {

@@ -2,35 +2,9 @@
     <section>
         <input [disabled]="loading" id="movie" name="movieInput" (keyup.enter)="searchMovies(movieInput, 1)" [(ngModel)]="movieInput" placeholder="Busque um filme por nome, ano ou gênero...">
     </section>
-    <section *ngFor="let movie of movies | paginate: { itemsPerPage: 5, currentPage: p }" class="display-grid container-grid--list">
-        <figure (click)="openMovie(movie.id)">
-            <img class="movie-image" [src]="movie.posterPath" [alt]="movie.title" [title]="movie.title">
-        </figure>
-        <div class="movie-info display-grid container-grid-movie--info">
-            <div (click)="openMovie(movie.id)" class="display-grid container-grid-movie--title">
-                <div class="circle-info">{{movie.popularity | percent:'2.0-0'}}</div>
-                <div class="title">
-                    <div class="display-flex title-flex">
-                        <p>{{movie.title}}</p>
-
-                    </div>
-                </div>
-            </div>
-            <div class="display-grid container-grid-movie--title date">
-                <div></div>
-                <time *ngIf="movie.releaseDate; else noDate" class="date">{{ movie?.releaseDate | date: 'dd/MM/y' }}</time>
-                <ng-template #noDate>--/--/--</ng-template>
-            </div>
-            <div class="movie-info--text">
-                <div class="content">
-                    {{movie.overview}}
-                </div>
-                <div class="display-flex tooltips">
-                    <span *ngFor="let genre of movie.movieGenre" (click)="genreService(genre.id, 1) && moveTop()" class="tooltip-item">{{genre.name}}</span>
-                </div>
-            </div>
-        </div>
-    </section>
+    <div *ngFor="let movie of movies | paginate: { itemsPerPage: 5, currentPage: p }">
+        <app-movie [movie]="movie" (selectGenre)="searchsendGenre($event)"></app-movie>
+    </div>
     <section *ngIf="loading" class="display-flex not-found">
         <img src="../../assets/img/loading.svg" alt="Loading">
     </section>
