@@ -12,7 +12,8 @@ const routes: Routes = [
   pathMatch: 'full'
 },
 {path: 'movie/:id', component: MovieItemComponent},
-{ path: '**', component: PageNotFoundComponent}
+{ path: '404', component: PageNotFoundComponent },
+{ path: '**', component: PageNotFoundComponent }
 ];
 
 @NgModule({
