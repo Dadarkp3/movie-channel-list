@@ -26,7 +26,7 @@
         "urls": ["https://api.themoviedb.org/3/movie/**",
             "https://api.themoviedb.org/3/search/**",
             "https://api.themoviedb.org/3/genre/**",
-            "https://api.themoviedb.org/3/discover", "/home", "/**"
+            "https://api.themoviedb.org/3/discover", "/home",
         ],
         "cacheConfig": {
             "strategy": "freshness",

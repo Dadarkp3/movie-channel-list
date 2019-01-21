@@ -38,10 +38,8 @@ export class MovieService {
     return this.http.get<any>('https://api.themoviedb.org/3/movie/'+ id +'/videos?api_key='+ this.apiKey +'&language=pt-BR');
   }
 
-  mostPopularMovies(){
-    return this.http.get<any>('https://api.themoviedb.org/3/discover/movie?api_key='+this.apiKey+'&sort_by=popularity.desc&include_adult=false&include_video=false&page=1');
-
+  mostPopularMovies(page: number){
+    return this.http.get<any>('https://api.themoviedb.org/3/discover/movie?api_key='+this.apiKey+'&sort_by=popularity.desc&include_adult=false&include_video=false&page='+page);
   }
-
 
 }

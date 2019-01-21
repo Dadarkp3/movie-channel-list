@@ -32,7 +32,7 @@ export class MovieListComponent implements OnInit {
 
   ngOnInit() {
     this.searchGenre();
-    this.searchMostPopular();
+    this.searchMostPopular(1);
     this.sub = this.route.params.subscribe(params => this.id = params['id']);
     if (this.id) {
       this.genreService(this.id, 1);
@@ -44,15 +44,18 @@ export class MovieListComponent implements OnInit {
       .subscribe(query => this.searchMovies(query, 1));
   }
 
-  searchMostPopular() {
+  searchMostPopular(page) {
     this.loading = true;
-    this.service.mostPopularMovies().subscribe(response => {
+    this.service.mostPopularMovies(1).subscribe(response => {
       this.prepareData(response);
     });
   }
 
   searchMovies(searchInput, currentPage) {
     this.loading = true;
+    if (searchInput === '') {
+      this.searchMostPopular(currentPage);
+    }
     if (this.checkYearService(searchInput)) {
       this.service.searchMovieByYear(searchInput, currentPage).pipe(debounceTime(500)
       , distinctUntilChanged()).subscribe(response => {
