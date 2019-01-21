@@ -8,3 +8,4 @@
 - Carregar filmes em destaque ao iniciar a tela.
 - Cache dos filmes em destaque para funcionar offline.
 - Criação da página NotFound para páginas não encontradas (404).
+- Uso do Pipe Currency para moedas estrangeiras.
