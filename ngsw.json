@@ -51,7 +51,8 @@
         "https:\\/\\/api\\.themoviedb\\.org\\/3\\/movie\\/.*",
         "https:\\/\\/api\\.themoviedb\\.org\\/3\\/search\\/.*",
         "https:\\/\\/api\\.themoviedb\\.org\\/3\\/genre\\/.*",
-        "https:\\/\\/api\\.themoviedb\\.org\\/3\\/discover"
+        "https:\\/\\/api\\.themoviedb\\.org\\/3\\/discover",
+        "\\/home"
       ],
       "strategy": "freshness",
       "maxSize": 15,
