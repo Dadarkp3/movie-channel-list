@@ -4,6 +4,8 @@ import { Movie } from '../models/movie';
 import { DOCUMENT } from '@angular/platform-browser';
 import { Inject} from "@angular/core";
 import { Router, ActivatedRoute } from '@angular/router';
+import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
+
 
 @Component({
   selector: 'app-movie-list',
@@ -37,7 +39,7 @@ export class MovieListComponent implements OnInit {
   searchMovies(searchInput, currentPage){
     this.loading = true;
     if(this.checkYearService(searchInput)){
-      this.service.searchMovieByYear(searchInput, currentPage).subscribe(response => {
+      this.service.searchMovieByYear(searchInput, currentPage).pipe(debounceTime(10)).subscribe(response => {
         this.prepareData(response);
       });
     }else if(this.checkGenreService()){
@@ -51,6 +53,10 @@ export class MovieListComponent implements OnInit {
   
   searchsendGenre(event){
     this.genreService(event, 1);
+  }
+
+  openMovieid(event){
+    this.openMovie(event);
   }
 
 

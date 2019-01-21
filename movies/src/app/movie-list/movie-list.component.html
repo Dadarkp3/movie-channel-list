@@ -3,7 +3,7 @@
         <input [disabled]="loading" id="movie" name="movieInput" (keyup.enter)="searchMovies(movieInput, 1)" [(ngModel)]="movieInput" placeholder="Busque um filme por nome, ano ou gênero...">
     </section>
     <div *ngFor="let movie of movies | paginate: { itemsPerPage: 5, currentPage: p }">
-        <app-movie [movie]="movie" (selectGenre)="searchsendGenre($event)"></app-movie>
+        <app-movie [movie]="movie" (openMovie)="openMovieid($event)" (selectGenre)="searchsendGenre($event)"></app-movie>
     </div>
     <section *ngIf="loading" class="display-flex not-found">
         <img src="../../assets/img/loading.svg" alt="Loading">

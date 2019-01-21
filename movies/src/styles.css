@@ -1,5 +1,3 @@
-@import url("grid.css");
-
 /* ------------ Reset CSS & Global Config ------------ */
 
 * {
@@ -11,10 +9,13 @@
 
 /* --------------------- Media Query ------------------- */
 
-@media (max-width: 600px) {
+@media only screen and (max-width: 700px) {
     .container-grid--list {
-        grid-template-columns: none;
-        grid-template-rows: repeat(1fr);
+        grid-template-columns: none !important;
+        grid-template-rows: auto !important;
+    }
+    figure {
+        margin-bottom: -1em !important;
     }
 }
 
@@ -254,7 +255,7 @@ input:focus {
 
 .container-grid--list {
     width: 100%;
-    grid-template-columns: 0.8fr 4fr;
+    grid-template-columns: 1.5fr 4fr;
 }
 
 .container-grid-movie--info {
@@ -262,7 +263,6 @@ input:focus {
 }
 
 .container-grid-movie--title {
-    grid-template-columns: 90px 3fr;
     background-color: var(--primary-color);
     color: var(--secondary-color);
     cursor: pointer;
@@ -276,6 +276,10 @@ input:focus {
     align-self: flex-end;
 }
 
+.self-end {
+    align-self: flex-end;
+}
+
 .circle-position {
     padding: 9px 4px;
     margin: 18px 1rem;
@@ -284,6 +288,7 @@ input:focus {
 
 .date {
     padding-top: 0.1rem;
+    margin-left: 10px;
 }
 
 .tooltips {
@@ -396,4 +401,16 @@ input:focus {
 .extra-info .percentual-circle {
     width: 20%;
     justify-content: center;
+}
+
+.circle-info {
+    border-radius: 50%;
+    background-color: var(--primary-color);
+    border: 5px solid var(--secondary-color);
+    box-shadow: 0 0 0 2px var(--primary-color);
+    font-size: x-large;
+    position: relative;
+    margin: 0 10px;
+    padding: 10px 5px;
+    top: 50%;
 }

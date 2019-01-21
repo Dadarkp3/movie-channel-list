@@ -27,7 +27,7 @@ export class MovieComponent implements OnInit {
     this.selectGenre.emit(id);
   }
 
-  openMpvie(id: number){
+  openMovieid(id: number){
     this.openMovie.emit(id);
   }
   
