@@ -1,6 +1,6 @@
 <main class="display-grid container-grid">
     <section>
-        <input [disabled]="loading" id="movie" name="movieInput" (keyup.enter)="searchMovies(movieInput, 1)" [(ngModel)]="movieInput" placeholder="Busque um filme por nome, ano ou gênero...">
+        <input aria-label="input-search" id="movie" name="movieInput" (keyup.enter)="searchMovies(movieInput, 1)" [(ngModel)]="movieInput" placeholder="Busque um filme por nome, ano ou gênero..." (input)="debounce$.next($event.target.value)">
     </section>
     <div *ngFor="let movie of movies | paginate: { itemsPerPage: 5, currentPage: p }">
         <app-movie [movie]="movie" (openMovie)="openMovieid($event)" (selectGenre)="searchsendGenre($event)"></app-movie>

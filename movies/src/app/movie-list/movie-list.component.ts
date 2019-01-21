@@ -5,6 +5,7 @@ import { DOCUMENT } from '@angular/platform-browser';
 import { Inject} from "@angular/core";
 import { Router, ActivatedRoute } from '@angular/router';
 import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
+import { Subject } from 'rxjs';
 
 
 @Component({
@@ -15,6 +16,7 @@ import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
 export class MovieListComponent implements OnInit {
 
   public movieInput: string = '';
+  public debounce$ = new Subject<string>();
   public movieGenre: any;
   public movies: Movie[] = [];
   public currentPage: number = 1;
@@ -24,7 +26,6 @@ export class MovieListComponent implements OnInit {
   public loading: boolean = false;
   public id: number;
   private sub: any;
-  
 
   constructor(private route: ActivatedRoute, private service: MovieService, @Inject(DOCUMENT) private document: Document, private router: Router) { }
 
@@ -32,50 +33,56 @@ export class MovieListComponent implements OnInit {
     this.searchGenre();
     this.searchMostPopular();
     this.sub = this.route.params.subscribe(params => this.id = params['id']);
-    if(this.id){
-      this.genreService(this.id,1);
+    if (this.id) {
+      this.genreService(this.id, 1);
     }
+
+    this.debounce$
+      .pipe(debounceTime(300))
+      .pipe(distinctUntilChanged())
+      .subscribe(query => this.searchMovies(query, 1));
   }
 
-  searchMostPopular(){
+  searchMostPopular() {
     this.loading = true;
     this.service.mostPopularMovies().subscribe(response => {
       this.prepareData(response);
     });
   }
 
-  searchMovies(searchInput, currentPage){
+  searchMovies(searchInput, currentPage) {
     this.loading = true;
-    if(this.checkYearService(searchInput)){
-      this.service.searchMovieByYear(searchInput, currentPage).subscribe(response => {
+    if (this.checkYearService(searchInput)) {
+      this.service.searchMovieByYear(searchInput, currentPage).pipe(debounceTime(500)
+      , distinctUntilChanged()).subscribe(response => {
         this.prepareData(response);
       });
-    }else if(this.checkGenreService()){
+    } else if (this.checkGenreService()) {
       this.genreService(this.genreId, currentPage);
-    }else{
+    } else {
       this.service.searchMovies(searchInput, currentPage).subscribe(response => {
         this.prepareData(response);
       });
     }
   }
-  
-  searchsendGenre(event){
+
+  searchsendGenre(event) {
     this.genreService(event, 1);
   }
 
-  openMovieid(event){
+  openMovieid(event) {
     this.openMovie(event);
   }
 
 
-  genreService(genreId, page){
+  genreService(genreId, page) {
     this.service.searchMovieByGenre(genreId, page).subscribe(response => {
       this.prepareData(response);
     });
   }
 
   checkYearService(searchInput): boolean {
-    return !isNaN(Number(searchInput))
+    return !isNaN(Number(searchInput));
   }
 
   checkGenreService(): boolean {
@@ -112,7 +119,6 @@ export class MovieListComponent implements OnInit {
         this.movies.push(movie);
       });
       this.pageSize = this.movies.length;
-      this.movieInput = '';
       this.loading = false;
       this.moveTop();
   }
